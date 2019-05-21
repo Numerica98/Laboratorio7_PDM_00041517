@@ -1,4 +1,4 @@
-package com.numerica98.laboratorio7_pdm_00041517
+package com.numerica98.laboratorio7_pdm_00041517.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

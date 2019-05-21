@@ -1,4 +1,4 @@
-package com.numerica98.laboratorio7_pdm_00041517
+package com.numerica98.laboratorio7_pdm_00041517.database
 
 import android.content.Context
 import androidx.room.Database
@@ -10,12 +10,14 @@ import androidx.room.RoomDatabase
 @Database (entities = [GithubRepo::class], version = 1, exportSchema = false)
  abstract class RoomDB : RoomDatabase() {
 
+    /*Por ser de tipo RoomDatabase construyo lo que va en esta funcion en base a la interfaz definida...
+    * ... y lo genera automaticamente*/
     abstract fun repoDao(): GithubRepo //Objeto Dao del tipo de mi entidad, deben ir tantas como Daos y entidades tenga
 
     companion object {
         private var INSTANCE: RoomDB? = null
 
-        fun getInstance(AppContext: Context): RoomDB{
+        fun getInstance(AppContext: Context): RoomDB {
             val temInstance = INSTANCE
 
             //Revisa si ya existe para devolver esa instancia, porque si viene null crea la base de datos
