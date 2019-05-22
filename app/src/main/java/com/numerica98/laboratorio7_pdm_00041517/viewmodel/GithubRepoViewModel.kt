@@ -31,11 +31,12 @@ class GithubRepoViewModel(app: Application) : AndroidViewModel(app) {
     //Ya no es suspend porque aqui estoy realizando el launch, basicamente la instruccion es "agarra esto de aca y mandalo"
     //Scope es como un contexto o perspectiva que se le esta mandando
     //Dispatchers.IO es el encargado de agarrar el codigo, llevarlo a donde sea y traerlo de vuelta
-    //Pasa lo que va a ser el lauch que es una funcion suspend
+    //Pasa lo que va a ser el lauch, que es una funcion suspend
     fun insert(repo: GithubRepo) = viewModelScope.launch(Dispatchers.IO){
         repository.insert(repo)
     }
 
+    //Devuelve un LiveData, ahora con propiedades nuevas
     fun getAll(): LiveData<List<GithubRepo>> = repository.getAll()
 
     fun nukeAll() = repository.nuke()

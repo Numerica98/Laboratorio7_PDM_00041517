@@ -12,7 +12,7 @@ import androidx.room.RoomDatabase
 
     /*Por ser de tipo RoomDatabase construyo lo que va en esta funcion en base a la interfaz definida...
     * ... y lo genera automaticamente*/
-    abstract fun repoDao(): GithubRepo //Objeto Dao del tipo de mi entidad, deben ir tantas como Daos y entidades tenga
+    abstract fun repoDao(): GithubDAO //Objeto Dao del tipo de mi entidad, deben ir tantas como Daos y entidades tenga
 
     companion object {
         private var INSTANCE: RoomDB? = null
